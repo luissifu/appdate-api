@@ -1,4 +1,6 @@
-appdate-api
+Appdate
 ===========
 
-API for Appdate
+Web interface for Appdate
+
+also contains the API for mobile versions

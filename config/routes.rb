@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   #home contoller
   get 'home' => 'home#index'
 
+  #notes
+  resources :notes
+
   #devise (auth)
   devise_for :users
 end

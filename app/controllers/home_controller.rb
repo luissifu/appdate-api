@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    #meep
+    @notes = Note.all
   end
 end

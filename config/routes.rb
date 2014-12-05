@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   resources :notes, except: [:show, :index]
 
   #devise (auth)
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations',
+  									sessions: 'sessions',
+  									passwords: 'passwords' }
 end

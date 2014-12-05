@@ -1,0 +1,11 @@
+<div class="row">
+	<h3>Notes</h3>
+	<%= link_to '+ Add Note', new_note_path, :class => "button tiny right" %>
+	<div class="small-12 medium-6 medium-centered columns">
+		<% @notes.each do |note| %>
+			<div class="small-12 columns">
+				<% note.inspect %>
+			</div>
+		<% end %>
+	</div>
+</div>

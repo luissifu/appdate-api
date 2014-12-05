@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @notes = Note.all
+    @notes = Note.where(user_id: current_user.id)
   end
 end

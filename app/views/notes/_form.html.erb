@@ -1,0 +1,19 @@
+<%= form_for(@note) do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 medium-centered columns">
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <div class="small-12 columns">
+        <%= f.text_field :name, autofocus: true, placeholder: "Name", required: true %>
+      </div>
+      <div class="small-12 columns">
+        <%= f.label 'Description' %>
+        <%= f.text_area :desc %>
+      </div>
+      <div class="small-12 columns">
+        <ul class="button-group">
+        <%= link_to 'Cancel', home_path, class: "secondary button" %>
+        <%= f.submit 'Create Note', class: "button right" %>
+      </div>
+    </div>
+  </div>
+<% end %>

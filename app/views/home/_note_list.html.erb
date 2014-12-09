@@ -1,6 +1,6 @@
 <div class="row">
 	<h3>Notes</h3>
-	<%= link_to '+ Add Note', new_note_path, :class => "button tiny right" %>
+	<%= link_to '+ Add Note', new_note_path, :class => "button tiny right success" %>
 	<div class="small-12 medium-6 medium-centered columns">
 		<% @notes.each do |note| %>
 			<div class="small-12 columns">
@@ -8,6 +8,10 @@
 			</div>
 			<div class="small-12 columns">
 				<%= note.desc %>
+			</div>
+			<div>
+				<%= link_to 'Edit', edit_note_path(note), :class => "button tiny" %>
+				<%= link_to 'Delete',note_path(note), method: :delete, :class => "button tiny" %>
 			</div>
 		<% end %>
 	</div>

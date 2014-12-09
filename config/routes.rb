@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'home' => 'home#index'
 
   #notes
-  resources :notes, except: [:show, :index]
+  resources :notes
 
   #devise (auth)
   devise_for :users, controllers: { registrations: 'registrations',

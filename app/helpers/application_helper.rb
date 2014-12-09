@@ -9,7 +9,6 @@ module ApplicationHelper
     warning: :warning
   }
 
-
   def display_flash_messages(key_matching = {})
     key_matching = DEFAULT_KEY_MATCHING.merge(key_matching)
     flash.reduce '' do |message, (key, value)|

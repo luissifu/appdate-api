@@ -9,5 +9,5 @@ class SignupFailure < Devise::FailureApp
     else
       redirect
     end
-end
   end
+end

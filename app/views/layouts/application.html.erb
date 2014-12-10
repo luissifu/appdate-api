@@ -6,13 +6,31 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Appdate" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <!-- Navbar -->
+    <div class="navbar navbar-default">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Appdate</a>
+      </div>
+      <% if user_signed_in? %>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete%></li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+    
     <%= javascript_include_tag "application" %>
   </body>
 </html>

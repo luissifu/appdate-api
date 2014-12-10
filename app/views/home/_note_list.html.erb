@@ -1,17 +1,17 @@
 <div class="row">
 	<h3>Notes</h3>
 	<%= link_to '+ Add Note', new_note_path, :class => "button tiny right success" %>
-	<div class="small-12 medium-6 medium-centered columns">
+	<div class="">
 		<% @notes.each do |note| %>
-			<div class="small-12 columns">
+			<div class="">
 				<strong><%= note.name %></strong>
 			</div>
-			<div class="small-12 columns">
+			<div class="">
 				<%= note.desc %>
 			</div>
 			<div>
-				<%= link_to 'Edit', edit_note_path(note), :class => "button tiny" %>
-				<%= link_to 'Delete',note_path(note), method: :delete, :class => "button tiny" %>
+				<%= link_to 'Edit', edit_note_path(note), :class => "button btn-primary" %>
+				<%= link_to 'Delete',note_path(note), method: :delete, :class => "btn btn-default" %>
 			</div>
 		<% end %>
 	</div>

@@ -1,7 +1,12 @@
-<div id="signupModal" class="reveal-modal small" data-reveal>
-	<%= form_for(:user, url: user_registration_path) do |f| %>
-		<div class="row">
-			<div class="small-12 columns">
+<div id="signupModal" class="modal" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<%= form_for(:user, url: user_registration_path) do |f| %>
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 class="modal-title">Sign Up</h3>
+			</div>
+			<div class="modal-body">
 				<div class="small-12 columns">
 					<h3>Sign up</h3>
 				</div>
@@ -11,10 +16,11 @@
 				<div class="small-12 columns">
 					<%= f.password_field :password, placeholder: "Password" %>
 				</div>
-				<div class="small-12 columns">
-					<%= f.submit "Sign up", class: "button right" %>
-				</div>
 			</div>
+			<div class="modal-footer">
+				<%= f.submit "Sign up", class: "btn btn-primary" %>
+			</div>
+			<% end %>
 		</div>
-	<% end %>
+	</div>
 </div>

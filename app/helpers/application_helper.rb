@@ -1,11 +1,11 @@
 module ApplicationHelper
   DEFAULT_KEY_MATCHING = {
-    alert: :alert,
+    alert: :danger,
     notice: :success,
-    info: :standard,
-    secondary: :secondary,
+    info: :info,
+    secondary: :default,
     success: :success,
-    error: :alert,
+    error: :danger,
     warning: :warning
   }
 
@@ -26,11 +26,10 @@ module ApplicationHelper
   private
 
   def build_message(args)
-    html = "<div class='row'><div class='small-12 columns'>"
-    html += content_tag :div, data: { alert: '' }, class: "alert-box #{args[:key_match][args[:key].to_sym] || :standard}" do
-      raw "#{args[:value]} #{link_to '&times;'.html_safe, '#', class: :close}"
-    end
-    html += '</div></div>'
+    html = '<div class="alert alert-dismissable alert-'
+    html += "#{args[:key_match][args[:key].to_sym] || :standard}\">"
+    html += '<button type="button" class="close" data-dismiss="alert">×</button>'
+    html += "<p>#{args[:value]}</p></div>"
     html.html_safe
   end
 

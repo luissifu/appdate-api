@@ -4,14 +4,16 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # devise for auth
 gem 'devise'
+# bootstrap and less
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 # bootstrap material design
 gem 'bootstrap-material-design'
 

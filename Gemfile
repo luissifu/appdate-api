@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -12,8 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 # bootstrap and less
 gem 'therubyracer'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'less-rails-bootstrap'
 # bootstrap material design
 gem 'bootstrap-material-design'
 

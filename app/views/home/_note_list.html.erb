@@ -1,17 +1,22 @@
 <div class="row">
-	<h3>Notes</h3>
-	<%= link_to '+ Add Note', new_note_path, :class => "button tiny right success" %>
-	<div class="">
+	<h3>
+		Notes
+		<%= link_to '+ Add Note', new_note_path, :class => "btn btn-success pull-right" %>
+	</h3>
+	<br />
+	<div id="note_list">
 		<% @notes.each do |note| %>
-			<div class="">
-				<strong><%= note.name %></strong>
-			</div>
-			<div class="">
-				<%= note.desc %>
-			</div>
-			<div>
-				<%= link_to 'Edit', edit_note_path(note), :class => "button btn-primary" %>
-				<%= link_to 'Delete',note_path(note), method: :delete, :class => "btn btn-default" %>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<%= note.name %>
+					<div class="pull-right note-btns">
+						<%= link_to '<i class="mdi-content-create"></i>'.html_safe, edit_note_path(note) %>
+						<%= link_to '<i class="mdi-navigation-close"></i>'.html_safe,note_path(note), method: :delete %>
+					</div>
+				</div>
+				<div class="panel-body">
+					<%= note.desc %>
+				</div>
 			</div>
 		<% end %>
 	</div>

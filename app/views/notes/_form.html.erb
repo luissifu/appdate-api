@@ -1,18 +1,18 @@
 <%= form_for(@note) do |f| %>
   <div class="row">
-    <div class="small-12 medium-6 medium-centered columns">
+    <div>
       <%= f.hidden_field :user_id, value: current_user.id %>
-      <div class="small-12 columns">
-        <%= f.text_field :name, autofocus: true, placeholder: "Name", required: true %>
+      <div class="form-group">
+        <%= f.label 'Title' %>
+        <%= f.text_field :name, autofocus: true, placeholder: "Title", required: true, class: "form-control" %>
       </div>
-      <div class="small-12 columns">
+      <div class="form-group">
         <%= f.label 'Description' %>
-        <%= f.text_area :desc %>
+        <%= f.text_area :desc, placeholder: "Enter description", class: "form-control"%>
       </div>
-      <div class="small-12 columns">
-        <ul class="button-group">
-        <%= link_to 'Cancel', home_path, class: "secondary button" %>
-        <%= f.submit 'Submit', class: "button right" %>
+      <div class="pull-right">
+        <%= link_to 'Cancel', home_path, class: "btn btn-default" %>
+        <%= f.submit 'Submit', class: "btn btn-primary" %>
       </div>
     </div>
   </div>

@@ -1,10 +1,10 @@
-class tasksController < ApplicationController
+class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @tasks = task.all
+    @tasks = Task.all
     respond_with(@tasks)
   end
 
@@ -13,7 +13,7 @@ class tasksController < ApplicationController
   end
 
   def new
-    @task = task.new
+    @task = Task.new
     respond_with(@task)
   end
 
@@ -21,7 +21,7 @@ class tasksController < ApplicationController
   end
 
   def create
-    @task = task.new(task_params)
+    @task = Task.new(task_params)
     @task.save
     respond_with(@task)
   end
@@ -38,7 +38,7 @@ class tasksController < ApplicationController
 
   private
   def set_task
-    @task = task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def task_params

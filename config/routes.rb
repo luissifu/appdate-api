@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
   #categories
   resources :categories
-  
+
+  #categories
+  resources :tasks
+
   #devise (auth)
   devise_for :users, controllers: { registrations: 'registrations',
   									sessions: 'sessions',

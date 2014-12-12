@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   #pages contoller
   root 'pages#index'
   get 'index' => 'pages#index'
@@ -9,6 +10,9 @@ Rails.application.routes.draw do
   #notes
   resources :notes
 
+  #categories
+  resources :categories
+  
   #devise (auth)
   devise_for :users, controllers: { registrations: 'registrations',
   									sessions: 'sessions',
